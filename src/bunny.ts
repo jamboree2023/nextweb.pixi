@@ -11,12 +11,17 @@ export class BunnyV8 {
     speedX = Math.random() * 10;
     speedY = (Math.random() * 10) - 5;
 
+    resetX = 0;
+    resetY = 0;
+
     positionX = 0;
     positionY = 0;
 
     bounds: Rectangle;
 
-    constructor(texture: Texture, bounds: Rectangle) {
+    constructor(texture: Texture, bounds: Rectangle, resetX: number, resetY: number) {
+        this.resetX = resetX;
+        this.resetY = resetY;
         this.view = new Sprite(texture)
         this.view.anchor.set(0.5, 1);
         this.bounds = bounds
@@ -57,7 +62,7 @@ export class BunnyV8 {
 
     reset() {
         
-        this.positionX = 1151.1811026028956;
-        this.positionY = 419.6868185311248;
+        this.positionX = this.resetX;
+        this.positionY = this.resetY;
     }
 }

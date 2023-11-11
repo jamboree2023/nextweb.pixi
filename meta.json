@@ -8388,7 +8388,16 @@
       ]
     },
     "src/bunny.ts": {
-      "bytes": 1508,
+      "bytes": 1620,
+      "imports": [
+        {
+          "path": "node_modules/pixi-v8/lib/index.mjs",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "src/buttons.ts": {
+      "bytes": 807,
       "imports": [
         {
           "path": "node_modules/pixi-v8/lib/index.mjs",
@@ -8397,7 +8406,7 @@
       ]
     },
     "src/jamboree.ts": {
-      "bytes": 6843,
+      "bytes": 5566,
       "imports": [
         {
           "path": "node_modules/pixi-v8/lib/index.mjs",
@@ -8405,6 +8414,10 @@
         },
         {
           "path": "src/bunny.ts",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/buttons.ts",
           "kind": "import-statement"
         }
       ]
@@ -8423,7 +8436,7 @@
     "dist/js/index.js": {
       "imports": [
         {
-          "path": "dist/js/jamboree-7OXRULT4.js",
+          "path": "dist/js/jamboree-WZ2Y7MQ5.js",
           "kind": "dynamic-import"
         }
       ],
@@ -8496,7 +8509,7 @@
       "inputs": {},
       "bytes": 119
     },
-    "dist/js/jamboree-7OXRULT4.js": {
+    "dist/js/jamboree-WZ2Y7MQ5.js": {
       "imports": [
         {
           "path": "dist/js/all-JRCGC57R.js",
@@ -8570,25 +8583,28 @@
           "bytesInOutput": 1141
         },
         "node_modules/pixi-v8/lib/scene/text/html/HtmlTextStyle.mjs": {
-          "bytesInOutput": 1472
+          "bytesInOutput": 1473
         },
         "node_modules/pixi-v8/lib/scene/text/utils/ensureTextStyle.mjs": {
           "bytesInOutput": 85
         },
         "node_modules/pixi-v8/lib/scene/text/TextView.mjs": {
-          "bytesInOutput": 1981
+          "bytesInOutput": 1983
         },
         "node_modules/pixi-v8/lib/scene/text/Text.mjs": {
-          "bytesInOutput": 637
+          "bytesInOutput": 640
         },
         "src/bunny.ts": {
-          "bytesInOutput": 735
+          "bytesInOutput": 782
+        },
+        "src/buttons.ts": {
+          "bytesInOutput": 346
         },
         "src/jamboree.ts": {
-          "bytesInOutput": 1744
+          "bytesInOutput": 2591
         }
       },
-      "bytes": 20892
+      "bytes": 22144
     },
     "dist/js/chunk-XLFYWOS5.js": {
       "imports": [
