@@ -56,7 +56,8 @@ export class BunnyV8 {
     }
 
     reset() {
-        this.positionX = 0;
-        this.positionY = 0;
+        
+        this.positionX = 1151.1811026028956;
+        this.positionY = 419.6868185311248;
     }
 }

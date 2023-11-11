@@ -17,6 +17,8 @@ services:
       context: .
       dockerfile: ./docker/Dockerfile.benchmark
     privileged: true
+    volumes:
+      - ./python_socket:/app
     ports:
       - "3001:3001"
 

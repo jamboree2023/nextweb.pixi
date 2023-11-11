@@ -8388,7 +8388,7 @@
       ]
     },
     "src/bunny.ts": {
-      "bytes": 1466,
+      "bytes": 1508,
       "imports": [
         {
           "path": "node_modules/pixi-v8/lib/index.mjs",
@@ -8397,7 +8397,7 @@
       ]
     },
     "src/jamboree.ts": {
-      "bytes": 6568,
+      "bytes": 6843,
       "imports": [
         {
           "path": "node_modules/pixi-v8/lib/index.mjs",
@@ -8410,7 +8410,7 @@
       ]
     },
     "src/index.ts": {
-      "bytes": 202,
+      "bytes": 268,
       "imports": [
         {
           "path": "src/jamboree.ts",
@@ -8423,7 +8423,7 @@
     "dist/js/index.js": {
       "imports": [
         {
-          "path": "dist/js/jamboree-ICQTA6EL.js",
+          "path": "dist/js/jamboree-7OXRULT4.js",
           "kind": "dynamic-import"
         }
       ],
@@ -8431,10 +8431,10 @@
       "entryPoint": "src/index.ts",
       "inputs": {
         "src/index.ts": {
-          "bytesInOutput": 128
+          "bytesInOutput": 117
         }
       },
-      "bytes": 126
+      "bytes": 115
     },
     "dist/js/all-JRCGC57R.js": {
       "imports": [
@@ -8496,7 +8496,7 @@
       "inputs": {},
       "bytes": 119
     },
-    "dist/js/jamboree-ICQTA6EL.js": {
+    "dist/js/jamboree-7OXRULT4.js": {
       "imports": [
         {
           "path": "dist/js/all-JRCGC57R.js",
@@ -8532,7 +8532,6 @@
         }
       ],
       "exports": [
-        "jamboRee",
         "jamboReeUnallocated"
       ],
       "entryPoint": "src/jamboree.ts",
@@ -8583,13 +8582,13 @@
           "bytesInOutput": 637
         },
         "src/bunny.ts": {
-          "bytesInOutput": 702
+          "bytesInOutput": 735
         },
         "src/jamboree.ts": {
-          "bytesInOutput": 3126
+          "bytesInOutput": 1744
         }
       },
-      "bytes": 22256
+      "bytes": 20892
     },
     "dist/js/chunk-XLFYWOS5.js": {
       "imports": [
