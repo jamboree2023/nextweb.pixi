@@ -1,7 +1,6 @@
 
 import { Assets, Loader, Graphics, Sprite, Container, EventSystem, Rectangle, TextureStyle, autoDetectRenderer, Text } from 'pixi-v8';
 import { BunnyV8 } from './bunny';
-import { Buttons } from './buttons';
 import { Pane } from 'tweakpane';
 
 TextureStyle.defaultOptions.scaleMode = 'nearest'
@@ -9,7 +8,8 @@ EventSystem.defaultEventFeatures.move = false;
 EventSystem.defaultEventFeatures.globalMove = false;
 
 const bunnyPool: BunnyV8[] = [];
-const activeButtonsPool: Buttons[] = [];
+const responsesToQuestions = [];
+let actualBunnyCount = 0;
 
 export async function jamboReeUnallocated({ preference }: { preference: 'webgl' | 'webgpu' }) {
 
@@ -100,8 +100,6 @@ export async function jamboReeUnallocated({ preference }: { preference: 'webgl' 
 
     const bunnies: BunnyV8[] = [];
 
-    const activeButtons: Buttons[] = [];
-
     const basicText = new Text('Basic text in pixi 2');
 
     basicText.x = 50;
@@ -113,29 +111,27 @@ export async function jamboReeUnallocated({ preference }: { preference: 'webgl' 
         basicText.text = "Hackathonists Arrived:: " + bunnies.length;
     }, 1000)
 
-    function addBunny() {
-        const bunnyTextureCount = 12; //textures.length
-        const bunny = bunnyPool.pop() || new BunnyV8(textures[bunnies.length % bunnyTextureCount], bounds, 1151.1811026028956, 419.6868185311248)
-        //const bunny = bunnyPool.pop() || new BunnyV8(textures[0], bounds, 1151.1811026028956, 419.6868185311248)
-        bunny.reset();
+    function addBunny(type : string = "bunny") {
+        if (type == ""){
+            return;
+        }
+        if (type == "bunny"){
+            let bunnyTextureCount = 12; //textures.length
+            let bunnyIndex = bunnies.length % bunnyTextureCount;
+            let bunnyX = 1151.1811026028956;
+            let bunnyY = 419.6868185311248;
+            processItemThatMightBeBunny(bunnyIndex, bunnyX, bunnyY);
+            actualBunnyCount++;
+        }
+    }
 
+    function processItemThatMightBeBunny(bunnyIndex: number, bunnyX: number, bunnyY: number){
+        const bunny = bunnyPool.pop() || new BunnyV8(textures[bunnyIndex], bounds, bunnyX, bunnyY);
+        bunny.reset();
         stage.addChild(bunny.view);
         bunnies.push(bunny);
     }
 
-    function addButtons() {
-        const tempLenght = 1; // challangeButtons.length
-
-        for (let i = 0; i < tempLenght; i++) {
-            console.log("button adding");
-            const button = activeButtonsPool.pop() || new Buttons(textures[i], bounds, 282.68548583984375, 275.02545166015625)
-            button.reset();
-    
-            stage.addChild(button.view);
-            activeButtons.push(button);
-        }
-
-    }
 
     function loadWatcher(){
         requestAnimationFrame( () => {
@@ -160,7 +156,6 @@ export async function jamboReeUnallocated({ preference }: { preference: 'webgl' 
     }
 
     loadWatcher();
-    addButtons();
 
 
     let pause = false;

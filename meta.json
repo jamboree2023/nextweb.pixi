@@ -8396,17 +8396,8 @@
         }
       ]
     },
-    "src/buttons.ts": {
-      "bytes": 807,
-      "imports": [
-        {
-          "path": "node_modules/pixi-v8/lib/index.mjs",
-          "kind": "import-statement"
-        }
-      ]
-    },
     "src/jamboree.ts": {
-      "bytes": 5566,
+      "bytes": 5368,
       "imports": [
         {
           "path": "node_modules/pixi-v8/lib/index.mjs",
@@ -8414,10 +8405,6 @@
         },
         {
           "path": "src/bunny.ts",
-          "kind": "import-statement"
-        },
-        {
-          "path": "src/buttons.ts",
           "kind": "import-statement"
         }
       ]
@@ -8436,7 +8423,7 @@
     "dist/js/index.js": {
       "imports": [
         {
-          "path": "dist/js/jamboree-WZ2Y7MQ5.js",
+          "path": "dist/js/jamboree-4KTTDFAF.js",
           "kind": "dynamic-import"
         }
       ],
@@ -8509,7 +8496,7 @@
       "inputs": {},
       "bytes": 119
     },
-    "dist/js/jamboree-WZ2Y7MQ5.js": {
+    "dist/js/jamboree-4KTTDFAF.js": {
       "imports": [
         {
           "path": "dist/js/all-JRCGC57R.js",
@@ -8597,14 +8584,11 @@
         "src/bunny.ts": {
           "bytesInOutput": 782
         },
-        "src/buttons.ts": {
-          "bytesInOutput": 346
-        },
         "src/jamboree.ts": {
-          "bytesInOutput": 2591
+          "bytesInOutput": 2488
         }
       },
-      "bytes": 22144
+      "bytes": 21695
     },
     "dist/js/chunk-XLFYWOS5.js": {
       "imports": [
