@@ -2,4 +2,6 @@ FROM python
 
 ADD CPUmoniroring.py /app/CPUmoniroring.py
 
+RUN pip install tqdm psutil
+
 CMD ["python3", "/app/CPUmoniroring.py"]
