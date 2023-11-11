@@ -1,5 +1,5 @@
 
-import { Assets, BigPool, Container, EventSystem, Rectangle, TextureStyle, autoDetectRenderer, Text } from 'pixi-v8';
+import { Assets, Loader, Sprite, Container, EventSystem, Rectangle, TextureStyle, autoDetectRenderer, Text } from 'pixi-v8';
 import { BunnyV8 } from './bunny';
 import { Pane } from 'tweakpane';
 
@@ -49,7 +49,6 @@ export async function jamboRee({ preference }: { preference: 'webgl' | 'webgpu' 
 
     const bunnies: BunnyV8[] = new Array<BunnyV8>(initialSize);
     let bunnyIndex = 0;
-    //const bunnies: BunnyV8[] = [];
 
 
     const basicText = new Text('Basic text in pixi');
@@ -60,24 +59,18 @@ export async function jamboRee({ preference }: { preference: 'webgl' | 'webgpu' 
     stage.addChild(basicText);
 
     setInterval(function(){
-        //basicText.text = "There are total " + bunnies.length;
         basicText.text = bunnyIndex + " vs" + bunnies.length;
     }, 1000)
 
     function addBunny() {
 
-        //const bunny = bunnyPool.pop() || new BunnyV8(textures[bunnies.length % textures.length], bounds)
         const bunny = bunnyPool.pop() || new BunnyV8(textures[bunnyIndex % textures.length], bounds);
         bunnyIndex++;
         
         bunny.reset();
 
         stage.addChild(bunny.view);
-        // if (bunnyIndex > bunnies.length){
-        //     bunnies.push(bunny);
-        // } else {
-        //     bunnies[bunnyIndex] = bunny;
-        // }
+
         bunnies[bunnyIndex] = bunny;
     }
 
@@ -124,8 +117,6 @@ export async function jamboRee({ preference }: { preference: 'webgl' | 'webgpu' 
             }
         }
 
-        // bunnies[0].view.visible = !bunnies[0].view.visible;
-
         renderer.render(stage);
         requestAnimationFrame(renderUpdate)
     }
@@ -148,11 +139,16 @@ export async function jamboReeUnallocated({ preference }: { preference: 'webgl' 
         resolution: 1,
         antialias: false,
         hello: true,
-    })
+    });
+
+    renderer.resize(window.innerWidth, window.innerHeight);
 
     document.body.appendChild(renderer.view.canvas as HTMLCanvasElement)
 
     const stage = new Container();
+
+    // Load the image
+
 
     const textures = Object.values(await Assets.load([
         './assets/bunnies/rabbitv3_ash.png',
@@ -166,10 +162,24 @@ export async function jamboReeUnallocated({ preference }: { preference: 'webgl' 
         './assets/bunnies/rabbitv3_superman.png',
         './assets/bunnies/rabbitv3_tron.png',
         './assets/bunnies/rabbitv3_wolverine.png',
-        './assets/bunnies/rabbitv3.png',
+        './assets/bunnies/rabbitv3.png'
     ]));
 
-    const bounds = new Rectangle(0, 0, 800, 600);
+    const junctionTexture = Object.values(await Assets.load([
+        './assets/junction.map.png'
+    ]));
+
+    const hawaii = new Sprite(junctionTexture[0]);
+
+    hawaii.anchor.x = 0.5;
+    hawaii.anchor.y = 0.5;
+
+    hawaii.position.x = window.innerWidth/3;
+    hawaii.position.y = window.innerHeight/3;
+
+    stage.addChild(hawaii);
+
+    const bounds = new Rectangle(0, 0, window.innerWidth, window.innerHeight);
 
     const bunnies: BunnyV8[] = [];
 
@@ -182,8 +192,7 @@ export async function jamboReeUnallocated({ preference }: { preference: 'webgl' 
     stage.addChild(basicText);
 
     setInterval(function(){
-        basicText.text = "There are total " + bunnies.length;
-        //basicText.text = bunnyIndex + " vs" + bunnies.length;
+        basicText.text = "Hackathonists Arrived:: " + bunnies.length;
     }, 1000)
 
     function addBunny() {
@@ -238,8 +247,6 @@ export async function jamboReeUnallocated({ preference }: { preference: 'webgl' 
                 bunnies[i].update();
             }
         }
-
-        // bunnies[0].view.visible = !bunnies[0].view.visible;
 
         renderer.render(stage);
         requestAnimationFrame(renderUpdate)

@@ -8397,7 +8397,7 @@
       ]
     },
     "src/jamboree.ts": {
-      "bytes": 6660,
+      "bytes": 6172,
       "imports": [
         {
           "path": "node_modules/pixi-v8/lib/index.mjs",
@@ -8423,7 +8423,7 @@
     "dist/js/index.js": {
       "imports": [
         {
-          "path": "dist/js/jamboree-GHMTGMJG.js",
+          "path": "dist/js/jamboree-K66IIWDQ.js",
           "kind": "dynamic-import"
         }
       ],
@@ -8496,7 +8496,7 @@
       "inputs": {},
       "bytes": 119
     },
-    "dist/js/jamboree-GHMTGMJG.js": {
+    "dist/js/jamboree-K66IIWDQ.js": {
       "imports": [
         {
           "path": "dist/js/all-NIHU4MKL.js",
@@ -8586,10 +8586,10 @@
           "bytesInOutput": 702
         },
         "src/jamboree.ts": {
-          "bytesInOutput": 2854
+          "bytesInOutput": 2908
         }
       },
-      "bytes": 21984
+      "bytes": 22038
     },
     "dist/js/chunk-DADWVMNF.js": {
       "imports": [

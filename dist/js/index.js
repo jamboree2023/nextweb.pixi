@@ -29568,6 +29568,7 @@ ${e2}`);
       antialias: false,
       hello: true
     });
+    renderer.resize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderer.view.canvas);
     const stage = new Container();
     const textures = Object.values(await Assets.load([
@@ -29584,14 +29585,23 @@ ${e2}`);
       "./assets/bunnies/rabbitv3_wolverine.png",
       "./assets/bunnies/rabbitv3.png"
     ]));
-    const bounds = new Rectangle(0, 0, 800, 600);
+    const junctionTexture = Object.values(await Assets.load([
+      "./assets/junction.map.png"
+    ]));
+    const hawaii = new Sprite(junctionTexture[0]);
+    hawaii.anchor.x = 0.5;
+    hawaii.anchor.y = 0.5;
+    hawaii.position.x = window.innerWidth / 3;
+    hawaii.position.y = window.innerHeight / 3;
+    stage.addChild(hawaii);
+    const bounds = new Rectangle(0, 0, window.innerWidth, window.innerHeight);
     const bunnies = [];
     const basicText = new Text("Basic text in pixi");
     basicText.x = 50;
     basicText.y = 100;
     stage.addChild(basicText);
     setInterval(function() {
-      basicText.text = "There are total " + bunnies.length;
+      basicText.text = "Hackathonists Arrived:: " + bunnies.length;
     }, 1e3);
     function addBunny() {
       const bunny = bunnyPool.pop() || new BunnyV8(textures[bunnies.length % textures.length], bounds);
