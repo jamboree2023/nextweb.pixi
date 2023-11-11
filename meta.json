@@ -8397,7 +8397,7 @@
       ]
     },
     "src/jamboree.ts": {
-      "bytes": 6172,
+      "bytes": 6568,
       "imports": [
         {
           "path": "node_modules/pixi-v8/lib/index.mjs",
@@ -8423,7 +8423,7 @@
     "dist/js/index.js": {
       "imports": [
         {
-          "path": "dist/js/jamboree-K66IIWDQ.js",
+          "path": "dist/js/jamboree-ICQTA6EL.js",
           "kind": "dynamic-import"
         }
       ],
@@ -8436,14 +8436,14 @@
       },
       "bytes": 126
     },
-    "dist/js/all-NIHU4MKL.js": {
+    "dist/js/all-JRCGC57R.js": {
       "imports": [
         {
-          "path": "dist/js/chunk-DADWVMNF.js",
+          "path": "dist/js/chunk-XLFYWOS5.js",
           "kind": "import-statement"
         },
         {
-          "path": "dist/js/chunk-7GWG3GCC.js",
+          "path": "dist/js/chunk-W3RMMDUI.js",
           "kind": "import-statement"
         }
       ],
@@ -8452,18 +8452,18 @@
       "inputs": {},
       "bytes": 57
     },
-    "dist/js/WebGPURenderer-GFAINDUE.js": {
+    "dist/js/WebGPURenderer-T767JDEQ.js": {
       "imports": [
         {
-          "path": "dist/js/chunk-UCMEGCU7.js",
+          "path": "dist/js/chunk-FMEZA6L3.js",
           "kind": "import-statement"
         },
         {
-          "path": "dist/js/chunk-XA34ZMT4.js",
+          "path": "dist/js/chunk-WTFWBCMK.js",
           "kind": "import-statement"
         },
         {
-          "path": "dist/js/chunk-7GWG3GCC.js",
+          "path": "dist/js/chunk-W3RMMDUI.js",
           "kind": "import-statement"
         }
       ],
@@ -8474,18 +8474,18 @@
       "inputs": {},
       "bytes": 120
     },
-    "dist/js/WebGLRenderer-ZSDYWBAX.js": {
+    "dist/js/WebGLRenderer-GBTUFZYW.js": {
       "imports": [
         {
-          "path": "dist/js/chunk-PR5KCFHF.js",
+          "path": "dist/js/chunk-NSZFW4QT.js",
           "kind": "import-statement"
         },
         {
-          "path": "dist/js/chunk-XA34ZMT4.js",
+          "path": "dist/js/chunk-WTFWBCMK.js",
           "kind": "import-statement"
         },
         {
-          "path": "dist/js/chunk-7GWG3GCC.js",
+          "path": "dist/js/chunk-W3RMMDUI.js",
           "kind": "import-statement"
         }
       ],
@@ -8496,38 +8496,38 @@
       "inputs": {},
       "bytes": 119
     },
-    "dist/js/jamboree-K66IIWDQ.js": {
+    "dist/js/jamboree-ICQTA6EL.js": {
       "imports": [
         {
-          "path": "dist/js/all-NIHU4MKL.js",
+          "path": "dist/js/all-JRCGC57R.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "dist/js/WebGPURenderer-GFAINDUE.js",
+          "path": "dist/js/WebGPURenderer-T767JDEQ.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "dist/js/WebGLRenderer-ZSDYWBAX.js",
+          "path": "dist/js/WebGLRenderer-GBTUFZYW.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "dist/js/chunk-DADWVMNF.js",
+          "path": "dist/js/chunk-XLFYWOS5.js",
           "kind": "import-statement"
         },
         {
-          "path": "dist/js/chunk-UCMEGCU7.js",
+          "path": "dist/js/chunk-FMEZA6L3.js",
           "kind": "import-statement"
         },
         {
-          "path": "dist/js/chunk-PR5KCFHF.js",
+          "path": "dist/js/chunk-NSZFW4QT.js",
           "kind": "import-statement"
         },
         {
-          "path": "dist/js/chunk-XA34ZMT4.js",
+          "path": "dist/js/chunk-WTFWBCMK.js",
           "kind": "import-statement"
         },
         {
-          "path": "dist/js/chunk-7GWG3GCC.js",
+          "path": "dist/js/chunk-W3RMMDUI.js",
           "kind": "import-statement"
         }
       ],
@@ -8586,15 +8586,15 @@
           "bytesInOutput": 702
         },
         "src/jamboree.ts": {
-          "bytesInOutput": 2908
+          "bytesInOutput": 3126
         }
       },
-      "bytes": 22038
+      "bytes": 22256
     },
-    "dist/js/chunk-DADWVMNF.js": {
+    "dist/js/chunk-XLFYWOS5.js": {
       "imports": [
         {
-          "path": "dist/js/chunk-7GWG3GCC.js",
+          "path": "dist/js/chunk-W3RMMDUI.js",
           "kind": "import-statement"
         }
       ],
@@ -8778,14 +8778,14 @@
       },
       "bytes": 64845
     },
-    "dist/js/chunk-UCMEGCU7.js": {
+    "dist/js/chunk-FMEZA6L3.js": {
       "imports": [
         {
-          "path": "dist/js/chunk-XA34ZMT4.js",
+          "path": "dist/js/chunk-WTFWBCMK.js",
           "kind": "import-statement"
         },
         {
-          "path": "dist/js/chunk-7GWG3GCC.js",
+          "path": "dist/js/chunk-W3RMMDUI.js",
           "kind": "import-statement"
         }
       ],
@@ -8868,14 +8868,14 @@
       },
       "bytes": 31851
     },
-    "dist/js/chunk-PR5KCFHF.js": {
+    "dist/js/chunk-NSZFW4QT.js": {
       "imports": [
         {
-          "path": "dist/js/chunk-XA34ZMT4.js",
+          "path": "dist/js/chunk-WTFWBCMK.js",
           "kind": "import-statement"
         },
         {
-          "path": "dist/js/chunk-7GWG3GCC.js",
+          "path": "dist/js/chunk-W3RMMDUI.js",
           "kind": "import-statement"
         }
       ],
@@ -9018,10 +9018,10 @@
       },
       "bytes": 53033
     },
-    "dist/js/chunk-XA34ZMT4.js": {
+    "dist/js/chunk-WTFWBCMK.js": {
       "imports": [
         {
-          "path": "dist/js/chunk-7GWG3GCC.js",
+          "path": "dist/js/chunk-W3RMMDUI.js",
           "kind": "import-statement"
         }
       ],
@@ -9598,7 +9598,7 @@
       },
       "bytes": 185484
     },
-    "dist/js/chunk-7GWG3GCC.js": {
+    "dist/js/chunk-W3RMMDUI.js": {
       "imports": [],
       "exports": [
         "A",
@@ -9758,30 +9758,6 @@
         "node_modules/pixi-v8/lib/rendering/renderers/shared/texture/TextureStyle.mjs": {
           "bytesInOutput": 1694
         },
-        "node_modules/pixi-v8/lib/events/FederatedEvent.mjs": {
-          "bytesInOutput": 1172
-        },
-        "node_modules/ismobilejs/esm/isMobile.js": {
-          "bytesInOutput": 1716
-        },
-        "node_modules/ismobilejs/esm/index.js": {
-          "bytesInOutput": 0
-        },
-        "node_modules/pixi-v8/lib/settings/utils/isMobile.mjs": {
-          "bytesInOutput": 50
-        },
-        "node_modules/pixi-v8/lib/accessibility/accessibilityTarget.mjs": {
-          "bytesInOutput": 205
-        },
-        "node_modules/pixi-v8/lib/accessibility/AccessibilitySystem.mjs": {
-          "bytesInOutput": 6331
-        },
-        "node_modules/pixi-v8/lib/settings/adapter/adapter.mjs": {
-          "bytesInOutput": 405
-        },
-        "node_modules/pixi-v8/lib/settings/settings.mjs": {
-          "bytesInOutput": 98
-        },
         "node_modules/pixi-v8/lib/assets/utils/convertToList.mjs": {
           "bytesInOutput": 90
         },
@@ -9808,6 +9784,42 @@
         },
         "node_modules/pixi-v8/lib/rendering/renderers/shared/texture/Texture.mjs": {
           "bytesInOutput": 2196
+        },
+        "node_modules/pixi-v8/lib/rendering/renderers/shared/view/View.mjs": {
+          "bytesInOutput": 29
+        },
+        "node_modules/pixi-v8/lib/utils/updateQuadBounds.mjs": {
+          "bytesInOutput": 270
+        },
+        "node_modules/pixi-v8/lib/scene/sprite/SpriteView.mjs": {
+          "bytesInOutput": 1653
+        },
+        "node_modules/pixi-v8/lib/scene/sprite/Sprite.mjs": {
+          "bytesInOutput": 512
+        },
+        "node_modules/pixi-v8/lib/events/FederatedEvent.mjs": {
+          "bytesInOutput": 1172
+        },
+        "node_modules/ismobilejs/esm/isMobile.js": {
+          "bytesInOutput": 1716
+        },
+        "node_modules/ismobilejs/esm/index.js": {
+          "bytesInOutput": 0
+        },
+        "node_modules/pixi-v8/lib/settings/utils/isMobile.mjs": {
+          "bytesInOutput": 50
+        },
+        "node_modules/pixi-v8/lib/accessibility/accessibilityTarget.mjs": {
+          "bytesInOutput": 205
+        },
+        "node_modules/pixi-v8/lib/accessibility/AccessibilitySystem.mjs": {
+          "bytesInOutput": 6331
+        },
+        "node_modules/pixi-v8/lib/settings/adapter/adapter.mjs": {
+          "bytesInOutput": 405
+        },
+        "node_modules/pixi-v8/lib/settings/settings.mjs": {
+          "bytesInOutput": 98
         },
         "node_modules/pixi-v8/lib/scene/text/bitmap/AbstractBitmapFont.mjs": {
           "bytesInOutput": 1134
@@ -9865,18 +9877,6 @@
         },
         "node_modules/pixi-v8/lib/scene/graphics/shared/GraphicsContext.mjs": {
           "bytesInOutput": 6298
-        },
-        "node_modules/pixi-v8/lib/rendering/renderers/shared/view/View.mjs": {
-          "bytesInOutput": 29
-        },
-        "node_modules/pixi-v8/lib/utils/updateQuadBounds.mjs": {
-          "bytesInOutput": 270
-        },
-        "node_modules/pixi-v8/lib/scene/sprite/SpriteView.mjs": {
-          "bytesInOutput": 1653
-        },
-        "node_modules/pixi-v8/lib/scene/sprite/Sprite.mjs": {
-          "bytesInOutput": 512
         }
       },
       "bytes": 101914

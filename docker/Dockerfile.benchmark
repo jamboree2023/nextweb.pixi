@@ -1,0 +1,5 @@
+FROM python
+
+ADD CPUmoniroring.py /app/CPUmoniroring.py
+
+CMD ["python3", "/app/CPUmoniroring.py"]
