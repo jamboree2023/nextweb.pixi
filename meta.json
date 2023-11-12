@@ -8397,7 +8397,7 @@
       ]
     },
     "src/jamboree.ts": {
-      "bytes": 5368,
+      "bytes": 9826,
       "imports": [
         {
           "path": "node_modules/pixi-v8/lib/index.mjs",
@@ -8423,7 +8423,7 @@
     "dist/js/index.js": {
       "imports": [
         {
-          "path": "dist/js/jamboree-4KTTDFAF.js",
+          "path": "dist/js/jamboree-QC4IB7E7.js",
           "kind": "dynamic-import"
         }
       ],
@@ -8496,7 +8496,7 @@
       "inputs": {},
       "bytes": 119
     },
-    "dist/js/jamboree-4KTTDFAF.js": {
+    "dist/js/jamboree-QC4IB7E7.js": {
       "imports": [
         {
           "path": "dist/js/all-JRCGC57R.js",
@@ -8561,7 +8561,7 @@
           "bytesInOutput": 4922
         },
         "node_modules/pixi-v8/lib/assets/Assets.mjs": {
-          "bytesInOutput": 3709
+          "bytesInOutput": 3710
         },
         "node_modules/pixi-v8/lib/index.mjs": {
           "bytesInOutput": 18
@@ -8576,7 +8576,7 @@
           "bytesInOutput": 85
         },
         "node_modules/pixi-v8/lib/scene/text/TextView.mjs": {
-          "bytesInOutput": 1983
+          "bytesInOutput": 1985
         },
         "node_modules/pixi-v8/lib/scene/text/Text.mjs": {
           "bytesInOutput": 640
@@ -8585,10 +8585,10 @@
           "bytesInOutput": 782
         },
         "src/jamboree.ts": {
-          "bytesInOutput": 2488
+          "bytesInOutput": 3864
         }
       },
-      "bytes": 21695
+      "bytes": 23077
     },
     "dist/js/chunk-XLFYWOS5.js": {
       "imports": [

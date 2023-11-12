@@ -10,6 +10,13 @@ EventSystem.defaultEventFeatures.globalMove = false;
 const bunnyPool: BunnyV8[] = [];
 const responsesToQuestions = [];
 let actualBunnyCount = 0;
+let knownBunnyCount = 0;
+let questionCheckTimer = 0;
+let errors = 0;
+let strike = false;
+let challange : boolean|number = false;
+
+let distanceWorker: Worker | undefined;
 
 export async function jamboReeUnallocated({ preference }: { preference: 'webgl' | 'webgpu' }) {
 
@@ -81,6 +88,16 @@ export async function jamboReeUnallocated({ preference }: { preference: 'webgl' 
         startPos = { x: e.x, y: e.y }
         console.log("OnDownPress");
         console.log(startPos);
+        setTimeout(function(){
+            console.log("Timeout 400 ");
+            if (pause){
+                findClosestHitBunny(startPos, bunnies);
+                //calculateDistance(startPos, bunnies);
+            } else {
+                console.log("There was no pause");
+            }
+        }, 700);
+
         lastPos = null
     }
     function onMove(e: any) {
@@ -100,7 +117,7 @@ export async function jamboReeUnallocated({ preference }: { preference: 'webgl' 
 
     const bunnies: BunnyV8[] = [];
 
-    const basicText = new Text('Basic text in pixi 2');
+    const basicText : Text = new Text('Basic text in pixi 2');
 
     basicText.x = 50;
     basicText.y = 100;
@@ -108,7 +125,32 @@ export async function jamboReeUnallocated({ preference }: { preference: 'webgl' 
     stage.addChild(basicText);
 
     setInterval(function(){
-        basicText.text = "Hackathonists Arrived:: " + bunnies.length;
+        if (!pause) {
+            basicText.text = "Hackathonists Arrived:: " + bunnies.length;
+            if (errors > 0){
+                basicText.text += ". SmallTalk failed  " + errors + " times";
+            }
+            if (knownBunnyCount > 0){
+                basicText.text += ". You spoke with " + knownBunnyCount;
+            }
+        } else {
+            if (questionCheckTimer > 5){
+                if (!challange){
+                    strike = true;
+                    basicText.text = "Looks like you did not get him" ;
+                    setTimeout(function (){
+                        addBunny();
+                        errors++;
+                        strike = false;
+                        pause = false;
+                    }, 1000);
+                } else {
+                    processChallange();
+                }
+
+            }
+            questionCheckTimer++;
+        }
     }, 1000)
 
     function addBunny(type : string = "bunny") {
@@ -131,6 +173,90 @@ export async function jamboReeUnallocated({ preference }: { preference: 'webgl' 
         stage.addChild(bunny.view);
         bunnies.push(bunny);
     }
+
+    function startDistanceWorker() {
+        if (typeof Worker !== 'undefined') {
+          if (typeof distanceWorker === 'undefined') {
+            distanceWorker = new Worker('workers/distance.js');
+            distanceWorker.onmessage = finishedCalculations
+          } else {
+            console.log('Worker already exists.');
+            //pentalty bunny
+            addBunny();
+          }
+        } else {
+          console.log('Sorry, your browser does not support Web Workers.');
+          //did not comply with requirements
+          //penalty bunny
+          addBunny();
+        }
+    }
+    //@ts-ignore removed , because of WebWorker issues...
+    function calculateDistance(startPos: any, bunnies: BunnyV8[]) {
+        if (!startPos || !bunnies){
+            return;
+        }
+        if (distanceWorker) {
+            distanceWorker.postMessage({startPos: startPos, bunnies: bunnies}); // Sending data to the worker
+        } else {
+          console.log('Worker not available.');
+          //bunny penalty 
+          addBunny();
+        }
+      }
+
+      function finishedCalculations(this: Worker, event: MessageEvent<any>) {
+        console.log('Received message from the worker:', event.data);
+        alert(event.data);
+      };
+
+      function findClosestHitBunny(startPos: { x: number, y: number }, bunnies: BunnyV8[]): void {
+        console.log("local calculation of closest bunny");
+        let closestIndex = -1;
+        let closestDistance = Number.MAX_VALUE;
+      
+        for (let i = 0; i < bunnies.length; i++) {
+          const bunny = bunnies[i];
+          const hit = hitTest(bunny.positionX, bunny.positionY, 25, 32, startPos.x, startPos.y);
+      
+          if (hit) {
+            const distance = calculateDistanceLocal(bunny.positionX, bunny.positionY, startPos.x, startPos.y);
+            if (distance < closestDistance) {
+              closestDistance = distance;
+              closestIndex = i;
+            }
+          }
+        }
+
+        finishedCalculationsLocal(closestIndex);
+      }
+
+      function finishedCalculationsLocal(index: number) {
+        console.log('Received message locally:', index);
+        if (index > -1) {
+            challange = index;
+        }
+      };
+      
+      function calculateDistanceLocal(x1: number, y1: number, x2: number, y2: number): number {
+        return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+      }
+      
+      function hitTest(
+        x1: number,
+        y1: number,
+        width1: number,
+        height1: number,
+        x2: number,
+        y2: number
+      ): boolean {
+        return (
+          x1 < x2 + 25 &&
+          x1 + width1 > x2 &&
+          y1 < y2 + 32 &&
+          y1 + height1 > y2
+        );
+      }
 
 
     function loadWatcher(){
@@ -161,7 +287,8 @@ export async function jamboReeUnallocated({ preference }: { preference: 'webgl' 
     let pause = false;
 
     renderer.view.canvas.addEventListener('mousedown', (e) => {
-        pause = !pause;
+        console.log("Pause switcher");
+        pause = true;
     });
 
 
@@ -174,13 +301,26 @@ export async function jamboReeUnallocated({ preference }: { preference: 'webgl' 
                 }
                 bunnies[i].update();
             }
+        } else if (!strike){
+            basicText.text = "Did you get him ??";
         }
 
         renderer.render(stage);
         requestAnimationFrame(renderUpdate)
     }
 
+    function processChallange(){
+        basicText.text = "Bare minimum Win case ! Congrats";
+        setTimeout(function(){
+            challange = false;
+            pause = false;
+            knownBunnyCount++;
+            errors--;
+        }, 5000);
+    }
+
     renderUpdate();
+    startDistanceWorker();
 
 
 }
